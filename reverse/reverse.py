@@ -49,13 +49,32 @@ class LinkedList:
 		# You must use recursion for this solution
 		# [1, 2, 3]
 		if node is not None:                # If there is a node
+
 			next_node = node.next_node      # Instant var with node to be accessed after current node
-			print(next_node)
 			node.next_node = prev           # Set the next node of current node to previous node
 			prev = node                     # Set prev to the node that was passed in
 			node = next_node                # Update passed in node with next_node
 			self.head = prev                # Set the head to prev
 			self.reverse_list(node, prev)   # Run until node is None
+
+			'''
+			[1, 2, 3]
+			N 1
+			NN 2
+			NNN 1
+			P 1
+			N 2
+			H 1
+			[1, 2, 3]
+			-------------------
+			[1, 2, 3]
+			N 2
+			NN 3
+			NNN 1
+			P 2
+			N 3
+			H 2
+			'''
 
 		# prev = None                             # Set prev to none as it doesn't exist... yet
 		# current = self.head                     # Set current node to self.head
